@@ -1,0 +1,84 @@
+***************spark shell*****************
+
+
+ubuntu@ip-172-31-23-79:/usr/local/spark$ bin/pyspark --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.0 --conf "spark.executor.extraJavaOptions=-Djava.security.auth.login.conf=/home/ubuntu/confluent_cloud_sasl_plain
+Python 2.7.15rc1 (default, Nov 12 2018, 14:31:15)
+[GCC 7.3.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+Ivy Default Cache set to: /home/ubuntu/.ivy2/cache
+The jars for the packages stored in: /home/ubuntu/.ivy2/jars
+:: loading settings :: url = jar:file:/usr/local/spark-2.4.0-bin-hadoop2.7/jars/ivy-2.4.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+org.apache.spark#spark-sql-kafka-0-10_2.11 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-cc7f1917-a1bf-4abd-82ac-f4e8b0f66249;1.0
+    confs: [default]
+    found org.apache.spark#spark-sql-kafka-0-10_2.11;2.4.0 in central
+    found org.apache.kafka#kafka-clients;2.0.0 in central
+    found org.lz4#lz4-java;1.4.0 in central
+    found org.xerial.snappy#snappy-java;1.1.7.1 in central
+    found org.slf4j#slf4j-api;1.7.16 in central
+    found org.spark-project.spark#unused;1.0.0 in central
+:: resolution report :: resolve 319ms :: artifacts dl 7ms
+    :: modules in use:
+    org.apache.kafka#kafka-clients;2.0.0 from central in [default]
+    org.apache.spark#spark-sql-kafka-0-10_2.11;2.4.0 from central in [default]
+    org.lz4#lz4-java;1.4.0 from central in [default]
+    org.slf4j#slf4j-api;1.7.16 from central in [default]
+    org.spark-project.spark#unused;1.0.0 from central in [default]
+    org.xerial.snappy#snappy-java;1.1.7.1 from central in [default]
+    ---------------------------------------------------------------------
+    |                  |            modules            ||   artifacts   |
+    |       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+    ---------------------------------------------------------------------
+    |      default     |   6   |   0   |   0   |   0   ||   6   |   0   |
+    ---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-cc7f1917-a1bf-4abd-82ac-f4e8b0f66249
+    confs: [default]
+    0 artifacts copied, 6 already retrieved (0kB/6ms)
+2018-12-21 22:47:01 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /__ / .__/\_,_/_/ /_/\_\   version 2.4.0
+      /_/
+ 
+Using Python version 2.7.15rc1 (default, Nov 12 2018 14:31:15)
+SparkSession available as 'spark'.
+>>>
+>>>
+>>>
+
+***************show config*****************
+
+>>> sc.getConf().getAll()
+[(u'spark.app.id', u'local-1545432422550'), (u'spark.repl.local.jars', u'file:///home/ubuntu/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.11-2.4.0.jar,file:///home/ubuntu/.ivy2/jars/org.apache.kafka_kafka-clients-2.0.0.jar,file:///home/ubuntu/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar,file:///home/ubuntu/.ivy2/jars/org.lz4_lz4-java-1.4.0.jar,file:///home/ubuntu/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.1.jar,file:///home/ubuntu/.ivy2/jars/org.slf4j_slf4j-api-1.7.16.jar'), (u'spark.executor.id', u'driver'), (u'spark.files', u'file:///home/ubuntu/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.11-2.4.0.jar,file:///home/ubuntu/.ivy2/jars/org.apache.kafka_kafka-clients-2.0.0.jar,file:///home/ubuntu/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar,file:///home/ubuntu/.ivy2/jars/org.lz4_lz4-java-1.4.0.jar,file:///home/ubuntu/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.1.jar,file:///home/ubuntu/.ivy2/jars/org.slf4j_slf4j-api-1.7.16.jar'), (u'spark.app.name', u'PySparkShell'), (u'spark.driver.extraJavaOptions', u'-Djava.security.auth.login.config=/home/ubuntu/confluent_cloud_sasl_plain'), (u'spark.executor.extraJavaOptions', u'-Djava.security.auth.login.conf=/home/ubuntu/confluent_cloud_sasl_plain'), (u'spark.driver.port', u'39985'), (u'spark.sql.catalogImplementation', u'hive'), (u'spark.rdd.compress', u'True'), (u'spark.jars', u'file:///home/ubuntu/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.11-2.4.0.jar,file:///home/ubuntu/.ivy2/jars/org.apache.kafka_kafka-clients-2.0.0.jar,file:///home/ubuntu/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar,file:///home/ubuntu/.ivy2/jars/org.lz4_lz4-java-1.4.0.jar,file:///home/ubuntu/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.1.jar,file:///home/ubuntu/.ivy2/jars/org.slf4j_slf4j-api-1.7.16.jar'), (u'spark.serializer.objectStreamReset', u'100'), (u'spark.submit.pyFiles', u'/home/ubuntu/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.11-2.4.0.jar,/home/ubuntu/.ivy2/jars/org.apache.kafka_kafka-clients-2.0.0.jar,/home/ubuntu/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar,/home/ubuntu/.ivy2/jars/org.lz4_lz4-java-1.4.0.jar,/home/ubuntu/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.1.jar,/home/ubuntu/.ivy2/jars/org.slf4j_slf4j-api-1.7.16.jar'), (u'spark.master', u'local[*]'), (u'spark.submit.deployMode', u'client'), (u'spark.driver.host', u'ip-172-31-23-79.us-east-2.compute.internal'), (u'spark.ui.showConsoleProgress', u'true')]
+>>>
+
+***************Read (1) row from a topic hosted in Confluent Cloud*****************
+
+df = spark.read.format("kafka").option("kafka.sasl.mechanism", "PLAIN").option("kafka.security.protocol", "SASL_SSL").option("kafka.bootstrap.servers", "pkc-l7koe.eu-west-1.aws.confluent.cloud:9092").option("subscribe", "xxxxx_example").load()
+>>> df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
+DataFrame[key: string, value: string]
+>>> df.head(1)
+[Row(key=None, value=bytearray(b'test3'), topic=u'xxxxx_example', partition=0, offset=0, timestamp=datetime.datetime(2018, 12, 20, 19, 45, 4, 791000), timestampType=0)]
+>>>
+
+***************show topic data in Confluent Cloud*****************
+
+ubuntu@ip-172-31-23-79:~/ccloud-0.2.1$ bin/ccloud consume -b -t xxxx_example
+test1
+test2
+test3
+^CProcessed a total of 3 messages.
+
+***************java.security.auth.login.config referenced for SASL_SSL*****************
+
+ubuntu@ip-172-31-23-79:~$ cat confluent_cloud_sasl_plain
+KafkaClient {
+org.apache.kafka.common.security.plain.PlainLoginModule required
+username="xxxxxxxxx"
+password="xxxxxxxxx";
+};
+
